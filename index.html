@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <script
+      src="https://kit.fontawesome.com/39f8908d38.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Decodificador de Texto</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <a href="index.html">
+        <img
+          class="header-logo"
+          src="./assets/img/Logo.svg"
+          alt="logo do site"
+        />
+      </a>
+    </header>
+    <main class="container">
+      <section class="box-direita">
+        <textarea
+          id="entrada-texto"
+          class="box-texto"
+          placeholder="Digite seu texto"
+        ></textarea>
+        <span class="alerta">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          Apenas letras minúsculas e sem acento.
+        </span>
+        <div class="botoes">
+          <button
+            id="Criptografar"
+            class="btn-Criptografar"
+            onclick="funcCriptografar()"
+            type="button"
+          >
+            Criptografar
+          </button>
+          <button
+            id="Descriptografar"
+            class="btn-Descriptografar"
+            onclick="funcDescriptografar()"
+            type="button"
+          >
+            Descriptografar
+          </button>
+        </div>
+      </section>
+      <section class="box-esquerda">
+        <div class="conteudo-esquerda">
+          <img
+            class="imagem-esquerda"
+            src="./assets/img/espiao.png"
+            alt="espiao"
+          />
+        </div>
+        <div class="div-esquerda">
+          <h1 class="titulo-esquerda">Nenhuma mensagem encontrada</h1>
+          <p class="texto-esquerda">
+            Digite um texto que você deseja criptografar ou descriptografar.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
