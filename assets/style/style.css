@@ -1,4 +1,4 @@
-::root {
+:root {
   --cor-primaria: #f3f5fc !important;
   --cor-segundaria: #e8e8e8 !important;
   --cor-terciaria: #0a3871 !important;
@@ -22,9 +22,9 @@ body {
 }
 
 .header-logo {
-  margin-left: 0.625rem;
-  padding-top: 0.625rem;
-  width: 10%;
+  width: 7.5rem;
+  height: 3rem;
+  margin: 2.5rem 00rem 0rem 2.5rem;
 }
 
 .container {
@@ -33,12 +33,27 @@ body {
   justify-content: center;
 }
 
+.box-direita {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 42.5rem;
+  align-content: flex-start;
+}
+
 .box-texto {
+  color: var(--cor-terciaria);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 3rem */
+  height: 36rem;
+  margin: 10.5rem 0 0 15rem;
+  resize: none;
   border: none;
-  color: #0a3871;
-  margin-top: 90px;
-  padding: 2rem;
-  line-height: 150%;
+  width: 100%;
 }
 
 ::placeholder {
