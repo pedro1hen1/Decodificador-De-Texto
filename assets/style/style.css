@@ -9,7 +9,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -30,13 +29,13 @@ body {
 .container {
   display: flex;
   margin: 1rem;
-  justify-content: center;
-  margin: 5rem 0 0 5rem;
+  justify-content: space-between;
+  margin: 5rem 0 0 10rem;
 }
 
 .box-direita {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 42.5rem;
   align-content: flex-start;
@@ -71,13 +70,17 @@ body {
 .box-texto:focus {
   outline: none;
 }
-.div-esquerda {
+.box-esquerda {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  justify-content: center;
 }
+.conteudo-esquerda {
+  background-color: white;
+  flex-shrink: 0;
+  border-radius: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
 .saida-esquerda {
   background: white;
   resize: none;
@@ -88,5 +91,31 @@ body {
 }
 .botoes {
   display: flex;
-  margin-top: 18px;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.btn-Criptografar {
+  width: 20.5rem;
+  padding: 1.5rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 1.5rem;
+  border: 1px solid;
+  background-color: var(--cor-terciaria);
+  cursor: pointer;
+  font-family: var(--fonte-primaria);
+  font-size: 1rem;
+  color: white;
+}
+
+.btn-Descriptografar {
+  width: 20.5rem;
+  padding: 1.5rem;
+  align-items: flex-start;
+  border-radius: 1.5rem;
+  border: 1px solid var(--Dark-blue-dark-blue-300, #0a3871);
+  background: #d8dfe8;
+  cursor: pointer;
 }
