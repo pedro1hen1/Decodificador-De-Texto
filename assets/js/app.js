@@ -1,51 +1,82 @@
-//função criptografar texto
-
+// Função para criptografar o texto inserido
 function funcCriptografar() {
   // Obtém o texto de entrada do elemento de entrada-texto
   const entrada = document.getElementById("entrada-texto").value;
 
-  // Copia o texto de entrada para uma variável de saída
-  let saida = entrada;
+  // Criptografa o texto substituindo vogais por sequências específicas
+  let saida = entrada
+    .replaceAll("a", "ai")
+    .replaceAll("e", "enter")
+    .replaceAll("i", "imes")
+    .replaceAll("o", "ober")
+    .replaceAll("u", "ufat");
 
-  // Substitui cada vogal no texto de saída pela sequência correspondente
-  saida = saida.replace(/a/g, "ai");
-  saida = saida.replace(/e/g, "enter");
-  saida = saida.replace(/i/g, "imes");
-  saida = saida.replace(/o/g, "ober");
-  saida = saida.replace(/u/g, "ufat");
+  // Exibe o resultado criptografado
+  exibirResultado(saida);
+}
 
-  // Obtém o elemento textarea onde queremos exibir o texto criptografado
-  const resultadoTextarea = document.getElementById("texto-criptografado");
+// Função para descriptografar o texto criptografado
+function funcDescriptografar() {
+  // Obtém o texto criptografado do elemento de entrada-texto
+  const entrada = document.getElementById("entrada-texto").value;
 
-  // Define o valor do textarea como o texto criptografado
-  resultadoTextarea.value = saida;
+  // Descriptografa o texto substituindo sequências por vogais
+  let saida = entrada
+    .replaceAll("ufat", "u")
+    .replaceAll("ober", "o")
+    .replaceAll("imes", "i")
+    .replaceAll("enter", "e")
+    .replaceAll("ai", "a");
 
-  // Obtém o elemento da seção direita
+  // Exibe o resultado descriptografado
+  exibirResultado(saida);
+}
+
+// Função para exibir o resultado na seção direita da página
+function exibirResultado(texto) {
+  // Remove o conteúdo existente da seção direita
   const boxDireito = document.getElementById("conteudo-direita");
+  boxDireito.innerHTML = "";
 
-  // Substitui o conteúdo da seção direita pelo textarea com o texto criptografado
-  boxDireito.innerHTML = `<textarea id="texto-criptografado" class="texto-criptografado">${saida}</textarea>`;
+  // Cria um novo elemento textarea
+  const novoTextarea = document.createElement("textarea");
+  novoTextarea.id = "texto-criptografado";
+  novoTextarea.className = "texto-criptografado";
+  novoTextarea.textContent = texto;
 
-  // Exibe a seção direita definindo seu display como "block"
+  // Adiciona o novo textarea à seção direita
+  boxDireito.appendChild(novoTextarea);
+
+  // Cria um novo botão de cópia
+  const botaoCopiar = document.createElement("button");
+  botaoCopiar.id = "botao-copiar";
+  botaoCopiar.className = "btn-copiar";
+  botaoCopiar.textContent = "Copiar";
+
+  // Adiciona um evento de clique ao botão de cópia
+  botaoCopiar.addEventListener("click", function () {
+    copiarTexto();
+  });
+
+  // Adiciona o botão de cópia à seção direita
+  boxDireito.appendChild(botaoCopiar);
+
+  // Torna a seção direita visível
   boxDireito.style.display = "block";
 }
 
-function funcDescriptografar() {
+// Função para copiar o texto criptografado
+function copiarTexto() {
   // Obtém o texto criptografado do elemento de texto-criptografado
-  const entrada = document.getElementById("texto-criptografado").value;
+  const copiarTexto = document.getElementById("texto-criptografado").value;
 
-  // Copia o texto criptografado para uma variável de saída
-  let saida = entrada;
-
-  // Substitui cada sequência de criptografia no texto de saída pela vogal correspondente
-  // Note que a ordem das substituições é o inverso da função de criptografia
-  saida = saida.replace(/ufat/g, "u");
-  saida = saida.replace(/ober/g, "o");
-  saida = saida.replace(/imes/g, "i");
-  saida = saida.replace(/enter/g, "e");
-  saida = saida.replace(/ai/g, "a");
-
-  // Atualiza o elemento textarea com o texto descriptografado
-  const resultadoTextarea = document.getElementById("texto-criptografado");
-  resultadoTextarea.value = saida;
+  // Grava o texto criptografado na área de transferência
+  navigator.clipboard
+    .writeText(copiarTexto)
+    .then(() => {
+      console.log("Texto copiado com sucesso!");
+    })
+    .catch((err) => {
+      console.error("Erro ao copiar texto:", err);
+    });
 }
