@@ -214,3 +214,56 @@ body {
 .links-icones:hover {
   color: var(--cor-primaria);
 }
+
+@media (max-width: 840px) {
+  .rodape {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 40px;
+  }
+
+  .box-esquerda {
+    width: 100%;
+  }
+
+  .imagem-direita {
+    display: none;
+  }
+
+  .box-direito {
+    width: 100%;
+    margin: 4rem 0 0 0;
+    border-radius: 2rem;
+  }
+
+  .titulo-direita {
+    width: 100%;
+  }
+
+  .texto-direita {
+    width: 100%;
+  }
+
+  .box-texto {
+    height: 11.25rem;
+  }
+
+  .rodape {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .botoes {
+    flex-direction: column;
+  }
+
+  .box-texto {
+    height: 36rem;
+  }
+}
