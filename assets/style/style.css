@@ -230,7 +230,6 @@ body {
 
 /* Media Queries */
 
-/* Para telas grandes (desktops) */
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
@@ -243,7 +242,7 @@ body {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    max-height: 10rem; /* Definindo uma altura máxima para o box direito */
+    max-height: 10rem;
   }
   .imagem-direita {
     display: none;
@@ -253,7 +252,6 @@ body {
   display: none;
 }
 
-/* Para telas médias (tablets) */
 @media (max-width: 768px) {
   .header-logo {
     margin: 1rem auto;
@@ -267,15 +265,14 @@ body {
     padding: 1rem;
   }
   .box-direito {
-    /* Outros estilos */
-    padding-top: 2rem; /* Adiciona uma margem superior para o botão de copiar */
+    padding-top: 2rem;
   }
   .rodape,
   .box-direito,
   .box-esquerda,
   .box-texto,
   .texto-criptografado {
-    font-size: 1rem; /* Ajuste do tamanho da fonte nas descrições */
+    font-size: 1rem;
   }
 
   .box-esquerda,
@@ -285,7 +282,7 @@ body {
   }
 
   .box-texto {
-    height: 20rem; /* Ajuste conforme necessário para a visão em dispositivos pequenos */
+    height: 20rem;
   }
 
   .botoes {
@@ -295,43 +292,43 @@ body {
 
   .btn-Criptografar,
   .btn-Descriptografar {
-    width: auto; /* Mantém o tamanho automático dos botões */
-    margin-top: 0.5rem; /* Adiciona uma margem entre os botões */
-    text-align: center; /* Centraliza o texto dentro dos botões */
-    padding: 1rem 1.5rem; /* Adiciona um padding uniforme */
-    font-size: 1rem; /* Mantém o tamanho original da fonte */
+    width: auto;
+    margin-top: 0.5rem;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 
   .btn-copiar {
-    width: auto; /* Mantém o tamanho automático do botão */
-    margin-top: 0.5rem; /* Adiciona uma margem entre o botão e a caixa de texto */
-    text-align: center; /* Centraliza o texto dentro do botão */
-    padding: 1rem 1.5rem; /* Adiciona um padding uniforme */
-    font-size: 1rem; /* Mantém o tamanho original da fonte */
+    width: auto;
+    margin-top: 0.5rem;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
-/* Para telas pequenas (smartphones) */
 @media (max-width: 375px) {
   .header-logo {
-    width: 5rem; /* Redução do tamanho do logo */
+    width: 5rem;
     height: auto;
   }
 
   .box-texto {
-    height: 15rem; /* Ajuste conforme necessário para a visão em dispositivos pequenos */
+    height: 15rem;
   }
 
   .alerta,
   .btn-Criptografar,
   .btn-Descriptografar,
   .btn-copiar {
-    font-size: 0.8rem; /* Redução do tamanho da fonte para melhor ajuste */
+    font-size: 0.8rem;
   }
 
   .conteudo-texto-direita,
   .titulo-direita,
-  .texto-direita {
-    font-size: 0.9rem; /* Ajuste do tamanho da fonte nas descrições */
+  .texto-direita,
+  .rodape {
+    font-size: 0.9rem;
   }
 }
