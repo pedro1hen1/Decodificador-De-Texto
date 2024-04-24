@@ -10,9 +10,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   background: var(--cor-primaria);
   color: var(--cor-segundaria);
   font-family: var(--fonte-primaria);
@@ -31,7 +35,6 @@ body {
   display: flex;
   margin: 1rem;
   justify-content: center;
-  margin: 1rem 0 0 0;
 }
 
 .box-esquerda {
@@ -46,6 +49,7 @@ body {
   background-color: var(--cor-primaria);
   color: var(--cor-terciaria);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: justify;
   font-family: var(--fonte-primaria);
   font-size: 2rem;
   font-style: normal;
@@ -57,12 +61,20 @@ body {
   width: 100%;
 }
 .alerta {
+  display: flex;
+  align-items: center;
   color: var(--cor-quaternaria);
   font-family: var(--fonte-primaria);
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+}
+.icon-alerta {
+  font-size: 1rem;
+  margin: 0.65rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 ::placeholder {
@@ -215,55 +227,91 @@ body {
   color: var(--cor-primaria);
 }
 
-@media (max-width: 840px) {
-  .rodape {
-    position: static;
+/* Media Queries */
+
+/* Para telas grandes (desktops) */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .box-direito {
+    margin-top: 2rem;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 10rem; /* Definindo uma altura máxima para o box direito */
+  }
+  .imagem-direita {
+    display: none;
   }
 }
 
+/* Para telas médias (tablets) */
+/* Para telas médias (tablets) */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    margin: 40px;
+  .header-logo {
+    margin: 1rem auto;
   }
 
-  .box-esquerda {
+  .container {
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .box-esquerda,
+  .box-direito {
     width: 100%;
+    align-items: center;
+  }
+
+  .box-texto {
+    height: 20rem; /* Ajuste conforme necessário para a visão em dispositivos pequenos */
+  }
+
+  .botoes {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .btn-Criptografar,
+  .btn-Descriptografar,
+  .btn-copiar {
+    width: auto; /* Mantém o tamanho automático dos botões */
+    margin-top: 0;
+    text-align: center; /* Centraliza o texto dentro dos botões */
+    padding: 1rem 1.5rem; /* Adiciona um padding uniforme */
+    font-size: 1rem; /* Mantém o tamanho original da fonte */
   }
 
   .imagem-direita {
     display: none;
   }
-
-  .box-direito {
-    width: 100%;
-    margin: 4rem 0 0 0;
-    border-radius: 2rem;
-  }
-
-  .titulo-direita {
-    width: 100%;
-  }
-
-  .texto-direita {
-    width: 100%;
-  }
-
-  .box-texto {
-    height: 11.25rem;
-  }
-
-  .rodape {
-    font-size: 1.2rem;
-  }
 }
 
+/* Para telas pequenas (smartphones) */
 @media (max-width: 375px) {
-  .botoes {
-    flex-direction: column;
+  .header-logo {
+    width: 5rem; /* Redução do tamanho do logo */
+    height: auto;
   }
 
   .box-texto {
-    height: 36rem;
+    height: 15rem; /* Ajuste conforme necessário para a visão em dispositivos pequenos */
+  }
+
+  .alerta,
+  .btn-Criptografar,
+  .btn-Descriptografar {
+    font-size: 0.8rem; /* Redução do tamanho da fonte para melhor ajuste */
+  }
+
+  .conteudo-texto-direita,
+  .titulo-direita,
+  .texto-direita {
+    font-size: 0.9rem; /* Ajuste do tamanho da fonte nas descrições */
   }
 }
