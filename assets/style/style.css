@@ -248,9 +248,6 @@ body {
     display: none;
   }
 }
-.btn-copiar {
-  display: none;
-}
 
 @media (max-width: 768px) {
   .header-logo {
@@ -300,11 +297,7 @@ body {
   }
 
   .btn-copiar {
-    width: auto;
-    margin-top: 0.5rem;
-    text-align: center;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
+    display: none;
   }
 }
 
