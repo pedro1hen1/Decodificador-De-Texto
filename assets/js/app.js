@@ -74,7 +74,7 @@ function copiarTexto() {
   navigator.clipboard
     .writeText(copiarTexto)
     .then(() => {
-      console.log("Texto copiado com sucesso!");
+      alert("Texto copiado com sucesso!");
     })
     .catch((err) => {
       console.error("Erro ao copiar texto:", err);
