@@ -9,6 +9,10 @@ Este projeto foi desenvolvido como parte do desafio proposto pela Alura e Oracle
 - "a" é convertido para "ai"
 - "o" é convertido para "ober"
 - "u" é convertido para "ufat"
+  
+Por exemplo:
+- "gato" => "gaitober"
+- gaitober" => "gato"
 
 ## Tecnologias Utilizadas
 - HTML, CSS, Flexbox
